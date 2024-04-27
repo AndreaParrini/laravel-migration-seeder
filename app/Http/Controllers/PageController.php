@@ -10,8 +10,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        $trainsOfTheDay = Train::whereDate('departure_time', date('Y-m-d'))->get();
+        $trainsOfTheDay = Train::whereDate('departure_time', date('Y-m-d') /* '2024-04-26' */)->get();
         //dd($trainsOfTheDay);
-        return view('welcome', compact('trainsOfTheDay'))->name('home');
+        return view('welcome', compact('trainsOfTheDay'));
     }
 }
