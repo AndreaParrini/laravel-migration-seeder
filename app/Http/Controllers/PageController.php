@@ -10,8 +10,15 @@ class PageController extends Controller
 {
     public function index()
     {
-        $trainsOfTheDay = Train::whereDate('departure_time', /* date('Y-m-d')  */ '2024-04-26')->get();
+        $trainsOfTheDay = Train::whereDate('departure_time', date('Y-m-d')/* '2024-04-26' */)->get();
         //dd($trainsOfTheDay);
         return view('welcome', compact('trainsOfTheDay'));
+    }
+
+    public function allTrains()
+    {
+        $allTrains = Train::all();;
+        //dd($trainsOfTheDay);
+        return view('alltrains', compact('allTrains'));
     }
 }

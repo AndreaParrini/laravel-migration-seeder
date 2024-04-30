@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
-@section('PageTitle', 'Home Page')
+@section('PageTitle', 'All Train')
 
 @section('content')
     <section id="section_main" class="p-5">
         <div class="container text-light">
-            <h3 class="text-center">Treni in partezza oggi {{ date('d-m-Y') }}</h3>
+            <h3 class="text-center">Tutti i treni</h3>
             <div class=" mb-3 mt-3">
                 <a class="text-decoration-none text-light" href="{{ Route('alltrains') }}">Visualizza tutti i treni</a>
             </div>
             <div class="row gap-4">
-                @forelse ($trainsOfTheDay as $train)
+                @forelse ($allTrains as $train)
                     <div class="col-12 ">
                         <div class="card">
                             <div class="card-body {{ $train->isCancelled ? 'text-decoration-line-through' : '' }}">
